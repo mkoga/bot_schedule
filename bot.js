@@ -52,11 +52,11 @@ slack.on('message', function(message) {
   var user = slack.getUserByID(message.user);
 
   if (message.type === 'message' && isDirect(slack.self.id, message.text)) {
-  // If unscheduled, use copy "_Unscheduled_. Message @dcwoods to coordinate times."
+  // If unscheduled, use copy "_Unscheduled_. Message makeMention("dcwoods") to coordinate times."
   // If scheduled, use formating "{days of the week} at {time} {timezone}"
-    var message = "@" + user.name + ": Our meeting times for this week are:" + "\r\n\r\n" + 
-                  "*Tactics*: _Unscheduled_. Message @dcwoods to coordinate times." + "\r\n" + 
-                  "*Master analysis*: _Unscheduled_. Message @dcwoods to coordinate times.";
+    var message = makeMention(user.name) + ": Our meeting times for this week are:" + "\r\n\r\n" + 
+                  "*Tactics*: _Sunday_ at 10:30PM EST." + "\r\n" + 
+                  "*Master analysis*: _Unscheduled_. Message " + makeMention("dcwoods") + " to coordinate times.";
 
     channel.send(message);
   }
