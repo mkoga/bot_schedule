@@ -55,8 +55,9 @@ slack.on('message', function(message) {
   // If unscheduled, use copy "_Unscheduled_. Message makeMention("dcwoods") to coordinate times."
   // If scheduled, use formating "{days of the week} at {time} {timezone}"
     var message = makeMention(user.name) + ": Our meeting times for this week are:" + "\r\n\r\n" + 
-                  "*Tactics*: _Sunday_ at 10:30PM EST." + "\r\n" + 
-                  "*Master analysis*: _Unscheduled_. Message " + makeMention("dcwoods") + " to coordinate times.";
+                  "*Tactics*: Two sessions on Tuesday and Wednesday at 7PM EST & 9PM EST." + "\r\n" + 
+                  "*Master analysis*: _Unscheduled_. Message " + makeMention("dcwoods") + " to coordinate times." + "\r\n" + 
+                  "*Endgame studies*: _Unscheduled_." + makeMention("dcwoods") + " to coordinate times.";
 
     channel.send(message);
   }
