@@ -1,7 +1,7 @@
 var utils = require('./utils'),
     path = require('path'),
 
-    token = 'xoxb-7891720802-LbT8vX5q3ioVDuRvQN81UltY',
+    token = process.env.TOKEN || 'xoxb-7891720802-LbT8vX5q3ioVDuRvQN81UltY',
     slack = new (require('slack-client'))(token, true, true),
 
     Storage = require('./storage'),
